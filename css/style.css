@@ -122,12 +122,12 @@ a {
   display: none;
 }
 
-.orange {
+.connect {
   background-color: #c7d4ed;
   padding: 12px;
 }
 
-.orange-text {
+.main-text {
   color: #bed4fd;
 }
 
@@ -136,13 +136,13 @@ a {
   color: #fff;
 }
 
-.gray {
+.light {
   background-color: #edf3ff;
   padding-bottom: 25px;
   clear:both;
 }
 
-.dark-gray {
+.dark-color {
   background-color: #12506d;
 }
 
@@ -163,6 +163,10 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+
+.project-img {
+  width: calc(33% - 18px);
 }
 
 .center-content {
@@ -215,6 +219,10 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+
+  .project-img {
+    width: 100%;
   }
 }
 

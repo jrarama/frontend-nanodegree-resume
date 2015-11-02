@@ -104,13 +104,13 @@ var projects = {
 			title: 'Spotify Streamer',
 			dates: '2015',
 			description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo',
-			images: ['images/197x148.gif', 'images/197x148.gif']
+			images: ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg']
 		},
 		{
 			title: 'JS Games',
 			dates: '2015',
 			description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt',
-			images: ['images/197x148.gif', 'images/197x148.gif']
+			images: ['images/image3.jpg', 'images/image4.jpg', 'images/image1.jpg']
 		}
 	],
 	display: function() {
