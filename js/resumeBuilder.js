@@ -2,7 +2,7 @@ function getHtml(template, value, placeholder) {
     return template.replace(placeholder || '%data%', value);
 }
 
-function setData($elem, templateValueMap, placeholder) {
+function setData($elem, templateValueMap, placeholder, prepend) {
     var html = '';
     $.each(templateValueMap, function(template, value) {
         var values = $.isArray(value) ? value : [value];
@@ -13,7 +13,11 @@ function setData($elem, templateValueMap, placeholder) {
             html += getHtml(tmpl, this, p);
         });
     });
-    $elem.append(html);
+    if (prepend) {
+        $elem.prepend(html);
+    } else {
+        $elem.append(html);
+    }
 }
 
 var bio = {
@@ -28,15 +32,19 @@ var bio = {
     },
     welcomeMessage: 'Welcome to my online resume',
     skills: [
-        'awesomeness', 'programming', 'saving the universe'
+        'awesomeness', 'programming', 'saving the universe', 'doing extraordinary things'
     ],
     bioPic: 'images/fry.jpg',
     display: function() {
-    	// Internationalize name
-    	var iName = inName(this.name);
+        // Internationalize name
+        var iName = inName(this.name);
+
         setData($('#header'), {
             'HTMLheaderName': iName,
-            'HTMLheaderRole': this.role,
+            'HTMLheaderRole': this.role
+        }, null, true);
+
+        setData($('#header'), {
             'HTMLbioPic': this.bioPic,
             'HTMLwelcomeMsg': this.welcomeMessage
         });
