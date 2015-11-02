@@ -103,7 +103,8 @@ Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
-  var locations;
+  var locations = null;
+  var infoWindow = null;
 
   var mapOptions = {
     disableDefaultUI: true
@@ -115,6 +116,11 @@ function initializeMap() {
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
+  function closeInfoWindow() {
+    if (infoWindow) {
+      infoWindow.close();
+    }
+  }
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -163,18 +169,22 @@ function initializeMap() {
       title: name
     });
 
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
-    var infoWindow = new google.maps.InfoWindow({
-      content: name
-    });
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      closeInfoWindow();
+      // infoWindows are the little helper windows that open when you click
+      // or hover over a pin on a map. They usually contain more information
+      // about a location.
+      infoWindow = new google.maps.InfoWindow({
+        content: name
+      });
+      infoWindow.open(map, marker);
     });
 
+    google.maps.event.addListener(map, 'click', function() {
+      closeInfoWindow();
+    });
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
