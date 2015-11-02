@@ -80,6 +80,10 @@ h5 {
   color: white;
 }
 
+#footerContacts {
+  padding-bottom: 5px;
+}
+
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -163,6 +167,10 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+
+.flex-box .flex-item {
+  margin-bottom: 5px;
 }
 
 .project-img {

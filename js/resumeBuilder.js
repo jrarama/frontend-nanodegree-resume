@@ -32,8 +32,10 @@ var bio = {
     ],
     bioPic: 'images/fry.jpg',
     display: function() {
+    	// Internationalize name
+    	var iName = inName(this.name);
         setData($('#header'), {
-            'HTMLheaderName': this.name,
+            'HTMLheaderName': iName,
             'HTMLheaderRole': this.role,
             'HTMLbioPic': this.bioPic,
             'HTMLwelcomeMsg': this.welcomeMessage

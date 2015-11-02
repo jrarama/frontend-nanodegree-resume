@@ -58,16 +58,12 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+function inName(fullName) {
+    var name = fullName.split(/ +/);
 
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-$(document).ready(function() {
-    $('button').click(function() {
-        var iName = inName() || function(){};
-        $('#name').html(iName);
-    });
-});
+    return name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase() +
+        " " + name[1].toUpperCase();
+}
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
